@@ -1,9 +1,10 @@
+<a href="/log_out/">Log Out</a><br>
+
 <h1>These are your stats:</h1>
-
-
 <h3>Correct answers: <%=@round.guesses.where(correct?: true).count%> !</h3>
 
 <h3>Wrong answers: <%=@round.guesses.where(correct?: false).count%> !</h3>
 
 <p> Not too bad for a rookie</p>
 
+<a href="/">Home</a>
