@@ -19,7 +19,7 @@ post '/user/create' do
   @user.password == params["user"]["password"]
     session[:status] = "logged in"
     session[:user_id] = @user.id
-    redirect '/decks/'
+    redirect '/decks'
 
 end
 
