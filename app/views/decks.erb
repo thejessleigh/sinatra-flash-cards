@@ -1,5 +1,6 @@
-<h1>Welcome to the Flashcard App. Here are all the decks.</h1>
+<a href="/log_out">Log Out</a><br>
 
+<h1>Here are all the decks.</h1>
 <ul>
   <%@decks.each do |deck|%>
     <li><a href='/round/<%=deck.id%>'><%=deck.title%></a></li>

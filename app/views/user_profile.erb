@@ -1,0 +1,9 @@
+<a href="/log_out">Log Out</a><br>
+Hi there <%=@user.user_name%>!!
+Here are your previous game stats:<br>
+<ul>
+  <%@user.rounds.each do |round| %>
+  <li>deck: <%=round.deck.title%> &nbsp;&nbsp;|&nbsp;&nbsp; correct: <%= round.guesses.where(correct?: true).count%>&nbsp;&nbsp; |&nbsp;&nbsp;     wrong: <%= round.guesses.where(correct?: false).count%></li>
+  <%end%>
+
+<a href="/">Home</a>
