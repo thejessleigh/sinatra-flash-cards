@@ -1,12 +1,16 @@
 get '/user/login/' do
-  @user = User.where(params[:user]).first
-  if @user
+  puts params
+  @user = User.find_by(user_name: params["user"]["user_name"])
+  if @user.password == params["user"]["password"]
     session[:status] = "logged in"
     session[:user_id] = @user.id
     redirect '/decks/'
   else
-    erb :index
+    redirect "/"
   end
+
+
+
 end
 
 post '/user/create/' do
