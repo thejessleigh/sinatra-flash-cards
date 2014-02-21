@@ -5,12 +5,12 @@ get '/' do
   erb :index
 end
 
-get '/log_out/' do
+get '/log_out' do
   session.clear
   redirect '/'
 end
 
-get '/decks/' do
+get '/decks' do
   if session[:status] != "logged in"
     redirect '/'
   else

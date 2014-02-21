@@ -12,8 +12,10 @@ post '/card/answer/:card_id' do
     redirect '/'
   else
     @guess = Guess.create(round_id: session[:round_id], card_id: params[:card_id], correct?: params[:answer] == params[:correct])
+    session[:previous_answer] = @guess.correct?
     if session[:cards].empty?
-      redirect '/round/stats'
+      # redirect '/round/stats/'
+      erb :run_card
     else
       redirect "/round/card/#{session[:cards].pop.id}"
     end
@@ -42,9 +44,3 @@ get '/round/:deck_id' do
     erb :start_round
   end
 end
-
-
-## card answer final redirects to view stats
-
-## post card/answer and card/answer/final up the counter in guess
-## for correct answers and do nothing for incorrect answers.
