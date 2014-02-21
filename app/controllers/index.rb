@@ -1,5 +1,10 @@
 get '/' do
   # Look in app/views/index.erb
-  @decks = Deck.all
+
   erb :index
+end
+
+get '/decks/' do
+  @decks = Deck.all
+  erb :decks
 end

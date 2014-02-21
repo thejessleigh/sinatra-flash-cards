@@ -1,0 +1,13 @@
+<h1>Welcome to the Flashcard App. Here are all the decks.</h1>
+
+<ul>
+  <%@decks.each do |deck|%>
+    <li><a href='/round/<%=deck.id%>'><%=deck.title%></a></li>
+  <%end%>
+</ul>
+
+
+
+
+
+
