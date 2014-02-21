@@ -1,0 +1,22 @@
+<h1><%= session[:deck_title]%></h1>
+
+<h3>Question:</h3>
+<p><%= @card.question%>
+
+
+<%if session[:cards].empty?%>
+  <p>This was your last question!!!!</p>
+  <form id ="question" action = '/card/answer/final' method="post">
+    <label for="answer">Answer:</label><br>
+    <input type="text" name="answer" id="answer">
+    <input type="text" name="correct" value="<%=@card.answer%>" style = "display:none;">
+    <input type="submit" value="submit">
+<%else%>
+  <form id ="question" action = '/card/answer/<%=@card.id%>' method="post">
+    <label for="answer">Answer:</label><br>
+    <input type="text" name="answer" id="answer">
+    <input type="text" name="correct" value="<%=@card.answer%>" style = "display:none;">
+    <input type="submit" value="submit">
+  </form>
+<%end%>
+

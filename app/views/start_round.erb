@@ -1,4 +1,7 @@
 <div id = "game">
-  <h1><%= @deck.title %></h1>
-  <a href ="/round/question/<%= @deck.id %>">Get question</a>
+  <h1><%= session[:deck_title]%></h1>
+
+  <a href ="/round/card/<%=session[:cards].pop.id%>">Get question</a>
+
+
 </div>
