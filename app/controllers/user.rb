@@ -25,3 +25,9 @@ end
 get '/user/create' do
   erb :sign_up
 end
+
+get '/user/logout' do
+  session[:status] = nil
+  session[:user_id] = nil
+  redirect '/'
+end

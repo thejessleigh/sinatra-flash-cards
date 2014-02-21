@@ -1,5 +1,11 @@
 <h1>Welcome to the Flashcard App. We will put more exciting text in later.</h1>
-<p>You need to sign in</p>
+
+<% if  session[:status] == "logged in" %>
+  <p> Welcome, user # <%= session[:user_id] %> </p>
+<% else %>
+  <p>You need to sign in</p>
+<% end %>
+
 <br><br>
 
 <form action="/user/login/" method="get">
