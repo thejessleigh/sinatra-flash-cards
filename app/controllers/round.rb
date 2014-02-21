@@ -7,8 +7,6 @@ post '/card/answer/:card_id' do
   puts session[:round_id]
   @guess = Guess.create(round_id: session[:round_id], card_id: params[:card_id], correct?: params[:answer] == params[:correct])
   if session[:cards].empty?
-    puts "=++++++++++++++++++++++++++++++++++++++++++++++++++++"
-    p @guess
     redirect '/round/stats'
   else
     puts "=++++++++++++++++++++++++++++++++++++++++++++++++++++"
@@ -19,6 +17,7 @@ post '/card/answer/:card_id' do
 end
 
 get '/round/stats' do
+  @round = Round.find(session[:round_id])
   erb :stats
 end
 
