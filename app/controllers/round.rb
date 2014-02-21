@@ -1,34 +1,46 @@
 get '/round/card/:card_id' do
-  @card = Card.find(params[:card_id])
-  erb :run_card
+  if session[:status] != "logged in"
+    redirect '/'
+  else
+    @card = Card.find(params[:card_id])
+    erb :run_card
+  end
 end
 
 post '/card/answer/:card_id' do
-  puts session[:round_id]
-  @guess = Guess.create(round_id: session[:round_id], card_id: params[:card_id], correct?: params[:answer] == params[:correct])
-  if session[:cards].empty?
-    redirect '/round/stats'
+  if session[:status] != "logged in"
+    redirect '/'
   else
-    puts "=++++++++++++++++++++++++++++++++++++++++++++++++++++"
-    p @guess
-    redirect "/round/card/#{session[:cards].pop.id}"
+    @guess = Guess.create(round_id: session[:round_id], card_id: params[:card_id], correct?: params[:answer] == params[:correct])
+    if session[:cards].empty?
+      redirect '/round/stats'
+    else
+      redirect "/round/card/#{session[:cards].pop.id}"
+    end
   end
-
 end
 
 get '/round/stats' do
-  @round = Round.find(session[:round_id])
-  erb :stats
+  if session[:status] != "logged in"
+    redirect '/'
+  else
+    @round = Round.find(session[:round_id])
+    erb :stats
+  end
 end
 
 get '/round/:deck_id' do
-  @deck = Deck.find(params[:deck_id])
-  @round = Round.create(deck_id: params[:deck_id], user_id: session[:user_id])
-  session[:round_id] = @round.id
-  session[:cards] = @deck.cards.shuffle
-  session[:deck_title] =@deck.title
-  # binding.pry
-  erb :start_round
+  if session[:status] != "logged in"
+    redirect '/'
+  else
+    @deck = Deck.find(params[:deck_id])
+    @round = Round.create(deck_id: params[:deck_id], user_id: session[:user_id])
+    session[:round_id] = @round.id
+    session[:cards] = @deck.cards.shuffle
+    session[:deck_title] =@deck.title
+    # binding.pry
+    erb :start_round
+  end
 end
 
 

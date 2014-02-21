@@ -1,10 +1,12 @@
 get '/' do
-  # Look in app/views/index.erb
-
   erb :index
 end
 
 get '/decks/' do
-  @decks = Deck.all
-  erb :decks
+  if session[:status] != "logged in"
+    redirect '/'
+  else
+    @decks = Deck.all
+    erb :decks
+  end
 end
