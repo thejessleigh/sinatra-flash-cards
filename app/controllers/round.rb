@@ -4,12 +4,18 @@ get '/round/card/:card_id' do
 end
 
 post '/card/answer/:card_id' do
-  @guess = Guess.create
+  puts session[:round_id]
+  @guess = Guess.create(round_id: session[:round_id], card_id: params[:card_id], correct?: params[:answer] == params[:correct])
   if session[:cards].empty?
+    puts "=++++++++++++++++++++++++++++++++++++++++++++++++++++"
+    p @guess
     redirect '/round/stats'
   else
+    puts "=++++++++++++++++++++++++++++++++++++++++++++++++++++"
+    p @guess
     redirect "/round/card/#{session[:cards].pop.id}"
   end
+
 end
 
 get '/round/stats' do
