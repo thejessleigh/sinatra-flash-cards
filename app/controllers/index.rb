@@ -5,6 +5,10 @@ get '/' do
 end
 
 get '/decks/' do
-  @decks = Deck.all
-  erb :decks
+  if session[:status] == "logged in"
+    @decks = Deck.all
+    erb :decks
+  else
+    redirect "/"
+  end
 end
