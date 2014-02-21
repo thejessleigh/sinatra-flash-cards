@@ -1,0 +1,8 @@
+This is the icebox:
+
+-Create User Profile Page showing statistics from previous games. Favorite decks.
+Most frequently missed questions.
+
+-AJAX functionality
+
+-Try again when you get a wrong answer on Wireframe5
