@@ -1,17 +1,36 @@
+
 get '/user/login' do
-  @user = User.where(params[:user]).first
-  if @user
+  puts params
+  @user = User.find_by(user_name: params["user"]["user_name"])
+  if @user.password == params["user"]["password"]
     session[:status] = "logged in"
     session[:user_id] = @user.id
     redirect '/decks'
   else
-    erb :index
+    redirect "/"
   end
+
 end
 
 post '/user/create' do
-  User.create(params)
+  @user = User.create(user_name: params["user"]["user_name"], password_hash: BCrypt::Password.create(params["user"]["password"]))
   erb :index
+
+  @user.password == params["user"]["password"]
+    session[:status] = "logged in"
+    session[:user_id] = @user.id
+    redirect '/decks'
+
+end
+
+get '/user/create' do
+  erb :sign_up
+end
+
+get '/user/logout' do
+  session[:status] = nil
+  session[:user_id] = nil
+  redirect '/'
 end
 
 get '/user/profile' do
