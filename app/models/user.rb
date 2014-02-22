@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   # users.password_hash in the database is a :string
   include BCrypt
 
-  has_many :rounds
+  has_many :rounds, :dependent => :destroy
   has_many :decks, through: :rounds
   # Remember to create a migration!
 

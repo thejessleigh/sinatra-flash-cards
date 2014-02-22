@@ -38,9 +38,9 @@ get '/decks/delete/:deck_id' do
   Deck.find(params[:deck_id]).destroy
   @decks = Deck.where(user_id: session[:user_id])
   if @decks.empty?
-    erb :decks
+    erb :decks, layout: !request.xhr?
   else
-    erb :decks_to_edit
+    erb :decks_to_edit, layout: !request.xhr?
   end
 end
 
@@ -50,7 +50,13 @@ get '/decks/edit/:deck_id' do
 end
 
 post '/decks/create' do
-   @deck = Deck.create(params[:deck])
+  @deck = Deck.create(params[:deck])
    # binding.pry
-   redirect "decks/add_card/#{@deck.id}"
+  if @deck.id
+    redirect "decks/add_card/#{@deck.id}"
+  else
+    @user_id = params[:deck][:user_id]
+    @message = "Deck title #{@deck.title} is not available."
+    erb :create_deck
+  end
 end

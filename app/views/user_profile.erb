@@ -1,13 +1,16 @@
 <a href="/user/logout">Log Out</a><br>
-Hi there <%=@user.user_name%>!!
-Here are your previous game stats:<br>
-<ul>
-  <%@user.rounds.each do |round| %>
-  <li>deck: <%=round.deck.title%> &nbsp;&nbsp;|&nbsp;&nbsp; correct: <%= round.guesses.where(correct?: true).count%>&nbsp;&nbsp; |&nbsp;&nbsp;     wrong: <%= round.guesses.where(correct?: false).count%></li>
-  <%end%>
+<h4>Hi there <%=@user.user_name%>!!</h4>
+<% if @user.rounds.empty? %>
+  <h4>You have no stats yet, why not <a href="/decks" class="inline">try out a deck</a></h4>
+<%else %>
+  <h4>Here are your previous game stats:</h4><br>
+  <ul>
+    <%@user.rounds.each do |round| %>
+    <li>deck: <%=round.deck.title%> &nbsp;&nbsp;|&nbsp;&nbsp; correct: <%= round.guesses.where(correct?: true).count%>&nbsp;&nbsp; |&nbsp;&nbsp;     wrong: <%= round.guesses.where(correct?: false).count%></li>
+    <%end%>
+<%end%>
 
-<a href="/">Home</a>
-
-
-
-<a href="/decks/create">Create Deck</a>
+<div class="bottom">
+  <a href="/">Home</a>
+  <a href="/decks/create">Create Deck</a>
+</div>

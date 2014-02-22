@@ -2,9 +2,9 @@
 
 <h1><%= session[:deck_title]%></h1>
   <%if session[:previous_answer]%>
-    You got the last one right!
+    <p>You got the last one right!</p>
   <%elsif session[:previous_answer] == false%>
-    You got the last one wrong!
+    <p>You got the last one wrong!</p>
   <%end%>
 
 
@@ -12,7 +12,7 @@
 
 <%unless @card%>
   <p>That was your last question!!!!</p>
-  <a href="/round/stats">See Your Game Stats</a>
+  <a id="view_stats" style="" href="/round/stats">See Your Game Stats</a>
 <%else%>
   <h3>Question:</h3>
   <p><%= @card.question%>

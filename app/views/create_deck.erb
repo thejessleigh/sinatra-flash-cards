@@ -1,5 +1,7 @@
 <h3>Please give your deck a name:</h3>
-
+<% if @message %>
+<h3><%= @message%></h3>
+<%end%>
 <form action="/decks/create" method="POST">
   <label for"title">Title:</label><br>
   <input type="text" name="deck[title]" id="title"><br>

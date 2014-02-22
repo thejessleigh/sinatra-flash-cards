@@ -1,8 +1,34 @@
+/** {
+   border: 1px solid red !important;
+}*/
+body {
+  font-family: 'Gabriela', serif;
+}
+
 .container {
   margin: 20px auto;
   width: 600px;
   padding: 0px 20px 20px 20px;
   border: 1px dotted black;
+  overflow: auto;
+}
+
+.left_container {
+  width:455;
+  margin:0;
+  padding:0;
+  clear:left;
+  display:inline;
+  float: left;
+}
+
+.right_container {
+  display: inline;
+  float:left;
+  margin:0;
+  padding:0;
+  width: 145px;
+  background-image: url('./flashcardsdeck.gif');
 }
 
 th {
@@ -14,11 +40,6 @@ th {
   display:none;
 }
 
-a {
-  text-decoration:none;
-  clear:left;
-  display: block;
-}
 
 .edit_links a{
   display: inline;
@@ -26,6 +47,49 @@ a {
   margin : 20px 15px;
   background: #C8DDE3;
   border: 2px solid #8ADCF2;
-  border-radius: 5px;
   font-size: 0.8em;
+}
+
+.inline {
+  display:inline;
+}
+
+.bottom {
+  overflow: auto;
+}
+a {
+
+}
+.bottom a {
+  display:inline;
+  float: left;
+  text-decoration:none;
+  margin: 30px 0 0 0;
+  padding: 3px 5px;
+  background: #DBDBDB;
+  border: 2px solid #BDBFBF;
+  border-radius: 5px;
+}
+.bottom a:hover{
+  background: #C7C9C9;
+  border: 2px solid #8C8E8F;
+}
+
+h1 {
+  display: block;
+  /*font-family: 'Gabriela', serif;*/
+}
+
+
+
+.logout {
+  display: inline-block;
+  position:relative;
+  top: 20px;
+  margin-bottom: 15px;
+  text-decoration:none;
+  padding: 3px;
+  background: #DBDBDB;
+  border: 2px solid #BDBFBF;
+  border-radius: 5px;
 }

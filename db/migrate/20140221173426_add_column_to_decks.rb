@@ -1,6 +1,6 @@
 class AddColumnToDecks < ActiveRecord::Migration
   def up
-    add_column :decks, :user_id, :integer, default: nil
+    add_column :decks, :user_id, :integer, default: 1
   end
 
   def down

@@ -1,6 +1,10 @@
 get '/' do
   if session[:status]
-    @user = User.find(session[:user_id])
+    @user = User.where(id: session[:user_id]).first
+    unless @user
+      session[:status] = nil
+      session[:user_id] = nil
+    end
   end
   erb :index
 end

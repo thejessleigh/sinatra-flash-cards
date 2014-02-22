@@ -3,7 +3,7 @@
 <div id = "game">
   <h1><%= session[:deck_title]%></h1>
 
-  <a href ="/round/card/<%=session[:cards].pop.id%>">Get question</a>
-
-
+  <div class="bottom">
+    <a href ="/round/card/<%=Card.find(session[:cards].pop).id%>">Get question</a>
+  </div>
 </div>
