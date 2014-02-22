@@ -30,6 +30,16 @@ get '/decks/create' do
   erb :create_deck
 end
 
+get '/decks/edit' do
+  @decks = Deck.where(user_id: session[:user_id])
+  erb :decks_to_edit
+end
+
+get '/decks/edit/:deck_id' do
+  @deck = Deck.find(params[:deck_id])
+  erb :edit_deck
+end
+
 post '/decks/create' do
    @deck = Deck.create(params[:deck])
    # binding.pry

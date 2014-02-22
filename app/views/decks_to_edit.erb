@@ -1,0 +1,7 @@
+<h3>Choose a deck to edit:</h3>
+<ul>
+<% @decks.each do |deck| %>
+  <li><a href="/decks/edit/<%=deck.id%>"><%= deck.title %></a></li>
+<% end %>
+</ul>
+
