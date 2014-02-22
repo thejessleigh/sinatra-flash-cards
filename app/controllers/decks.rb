@@ -10,7 +10,6 @@ end
 get '/decks/add_card/:deck_id' do
   @deck_id=params[:deck_id]
   erb :add_card
-
   #add additional field in form to store deck_id
 end
 
