@@ -27,6 +27,7 @@ get '/round/stats' do
     redirect '/'
   else
     @round = Round.find(session[:round_id])
+    session[:previous_answer]=nil
     erb :stats
   end
 end

@@ -7,3 +7,10 @@
   <input type="text" name="card[deck_id]" value="<%=@deck_id%>" class="invisible">
   <br><input type="submit" value="submit">
 </form>
+
+<% if @has_card%>
+Is your deck finished?<br>
+<a href ="/decks">Save Deck</a>
+<%end%>
+
+

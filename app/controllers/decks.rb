@@ -16,7 +16,11 @@ end
 
 post '/decks/add_card' do
   @card = Card.new(params[:card])
-  "card created"
+  @deck = Deck.find(params[:card][:deck_id])
+  @deck.cards << @card
+  @deck_id = @deck.id
+  @has_card = true
+  erb :add_card
   #add links on view for add another card and view user profile
   #create a confirmation view
 end
