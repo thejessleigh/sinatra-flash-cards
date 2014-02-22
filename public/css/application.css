@@ -4,6 +4,28 @@
   padding: 0px 20px 20px 20px;
   border: 1px dotted black;
 }
+
 th {
   text-align: left;
+}
+
+
+.invisible {
+  display:none;
+}
+
+a {
+  text-decoration:none;
+  clear:left;
+  display: block;
+}
+
+.edit_links a{
+  display: inline;
+  padding: 0 5px;
+  margin : 20px 15px;
+  background: #C8DDE3;
+  border: 2px solid #8ADCF2;
+  border-radius: 5px;
+  font-size: 0.8em;
 }

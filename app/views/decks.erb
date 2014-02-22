@@ -1,0 +1,20 @@
+<a href="/user/logout">Log Out</a><br>
+
+<h1>Here are all the decks.</h1>
+<ul>
+  <%@decks.each do |deck|%>
+    <li><a href='/round/<%=deck.id%>'><%=deck.title%></a></li>
+  <%end%>
+</ul>
+
+<a href="/">Home</a><br>
+<%unless @my_decks %>
+  <a href="/user/decks">View My Decks</a><br>
+<%else%>
+  <a href="/decks/edit">Edit decks</a><br>
+<%end%>
+
+<a href="/decks/create">Create Deck</a>
+
+
+
