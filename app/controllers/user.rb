@@ -37,3 +37,5 @@ get '/user/profile' do
   @user = User.find(session[:user_id])
   erb :user_profile
 end
+
+

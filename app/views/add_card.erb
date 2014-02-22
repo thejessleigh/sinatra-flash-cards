@@ -1,0 +1,9 @@
+<h3>Please fill out the fields:</h3>
+<form action="/decks/add_card" method="POST">
+  <label for"question">Question:</label><br>
+  <input type="text" name = "card[question]" id="question"><br>
+  <label for"answer">Answer:</label><br>
+  <input type="text" name="card[answer]" id="answer"><br>
+  <input type="text" name="card[deck_id]" value="<%=@deck_id%>" class="invisible">
+  <br><input type="submit" value="submit">
+</form>
