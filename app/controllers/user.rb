@@ -38,4 +38,11 @@ get '/user/profile' do
   erb :user_profile
 end
 
+get '/user/decks' do
+  @decks = Deck.where(user_id: session[:user_id])
+  @my_decks = true
+  erb :decks
+end
+
+
 

@@ -7,7 +7,12 @@
   <%end%>
 </ul>
 
-
+<a href="/">Home</a>
+<%unless @my_decks %>
+  <a href="/user/decks">View My Decks</a>
+<%else%>
+  <a href="/decks/edit">Edit decks</a>
+<%end%>
 
 
 
