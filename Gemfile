@@ -26,3 +26,5 @@ group :test do
 end
 
 gem 'bcrypt'
+
+gem 'font-awesome-less'

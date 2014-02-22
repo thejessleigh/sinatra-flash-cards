@@ -1,5 +1,3 @@
-<a href="/user/logout">Log Out</a><br>
-
 <h1><%= session[:deck_title]%></h1>
   <%if session[:previous_answer]%>
     <p>You got the last one right!</p>
@@ -14,8 +12,8 @@
   <p>That was your last question!!!!</p>
   <a id="view_stats" style="" href="/round/stats">See Your Game Stats</a>
 <%else%>
-  <h3>Question:</h3>
-  <p><%= @card.question%>
+  <h3 class="center">Question:</h3>
+  <p class="center"><%= @card.question%></p>
   <form id ="question" action = '/card/answer/<%=@card.id%>' method="post">
     <label for="answer">Answer:</label><br>
     <input type="text" name="answer" id="answer">

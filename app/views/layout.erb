@@ -12,6 +12,7 @@
   -->
   <link rel="stylesheet" href="/css/application.css">
   <link href='http://fonts.googleapis.com/css?family=Gabriela' rel='stylesheet' type='text/css'>
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
@@ -19,6 +20,12 @@
   <title></title>
 </head>
 <body>
+  <div class="nav">
+    <h1>Funky Cards</h1>
+    <a href="/user/logout"><i class="fa fa-share-square-o"></i></a>
+    <a href = "/"><i class="fa fa-home"></i></a>
+  </div>
+
   <div class="container">
     <%= yield %>
   </div>
