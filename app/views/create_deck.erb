@@ -4,7 +4,7 @@
 <%end%>
 <form action="/decks/create" method="POST">
   <label for"title">Title:</label><br>
-  <input type="text" name="deck[title]" id="title"><br>
+  <input type="text" name="deck[title]" id="title" autofocus><br>
   <input type="text" name="deck[user_id]" value= "<%=@user_id%>" class="invisible">
   <br><input type="submit" value="submit">
 </form>

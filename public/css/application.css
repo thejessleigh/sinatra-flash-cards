@@ -20,6 +20,14 @@ a {
   /*overflow:auto;*/
 }
 
+
+
+
+.wrapper {
+  width: 95%;
+
+}
+
 .nav a {
   text-decoration:none;
   float:right;

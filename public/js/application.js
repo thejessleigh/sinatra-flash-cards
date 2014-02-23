@@ -2,26 +2,11 @@ $(document).ready(function() {
 
   $('.slide').hide().show('slow');
 
-  $('a.edit').on('click', function(e){
+  $('.edit_links').hide();
+  $('.edit').on('click', function(e){
     e.preventDefault();
-    var url = $(this).attr('href')
-    var clicked = this
-    $.get(url, function(data){
-      $(clicked).next().html(data);
-      $('#delete_deck').on('click', function(e){
-        e.preventDefault();
-        $.get($(this).attr('href'),function(data){
-          $('.container').html(data);
-        });
-      });
-    });
-  });
-
-  $('#delete_deck').on('click', function(e){
-    e.preventDefault();
-    $.get($(this).attr('href'),function(data){
-      $('.container').html(data);
-    });
+    console.log("stopped");
+    $(this).next().toggle('slow');
   });
 
   $('#view_stats').on('click',function(e){
