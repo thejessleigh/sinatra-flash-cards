@@ -123,8 +123,8 @@ p {
   /*float:left;*/
   width:242px;
   height: 242px;
-  background: url(thebluecrown.png) no-repeat #1D0600;
-  color: #7C97EC;
+  background: url(thebluecrown.png) no-repeat #334657;
+  color: #ADBDCE;
   background-position: center;
   display: inline-block;
   overflow: auto;
@@ -135,11 +135,11 @@ p {
   height: 100px;*/
   border-radius:20px;
   font-size: 25px;
-  opacity: 0.5;
+  opacity: 0.85;
 }
 
 .deck:hover {
-  opacity: 0.7;
+  opacity: 1;
 }
 
 .deck a{
