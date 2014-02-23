@@ -10,6 +10,9 @@ a {
   color:#111;
 }
 
+/*.title{
+  display: none;
+}*/
 .nav {
   background-color:#4F3F57;
   padding: 40px 0;

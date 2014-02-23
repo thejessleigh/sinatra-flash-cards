@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+  $('.title').hide().show('slow');
+
   $('a.edit').on('click', function(e){
     e.preventDefault();
     var url = $(this).attr('href')
@@ -30,5 +32,9 @@ $(document).ready(function() {
       $('.container').append(data);
     })
   });
+
+  
   // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
 });
+
+

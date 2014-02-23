@@ -1,5 +1,5 @@
 
-<h1>These are your stats:</h1>
+<h1 class="title">These are your stats:</h1>
 <h3>Correct answers: <%=@round.guesses.where(correct?: true).count%> !</h3>
 
 <h3>Wrong answers: <%=@round.guesses.where(correct?: false).count%> !</h3>

@@ -1,0 +1,8 @@
+LOG:  database system was shut down at 2014-02-23 03:40:22 CST
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+ERROR:  database "flash_sinatra_development" already exists
+STATEMENT:  CREATE DATABASE flash_sinatra_development;
+	
+FATAL:  lock file "postmaster.pid" already exists
+HINT:  Is another postmaster (PID 697) running in data directory "/usr/local/var/postgres"?

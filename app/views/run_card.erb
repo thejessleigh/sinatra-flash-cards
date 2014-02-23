@@ -1,13 +1,13 @@
 <h1><%= session[:deck_title]%></h1>
   <%if session[:previous_answer]%>
-    <p>You got the last one right!</p>
+    <p class="title">You got the last one right!</p>
   <%elsif session[:previous_answer] == false%>
-    <p>You got the last one wrong!</p>
+    <p class="title">You got the last one wrong!</p>
   <%end%>
 
 
 
-
+<div class='title'>
 <%unless @card%>
   <p>That was your last question!!!!</p>
   <a id="view_stats" style="" href="/round/stats">See Your Game Stats</a>
@@ -20,6 +20,8 @@
     <input type="text" name="correct" value="<%=@card.answer%>" class="invisible">
     <input type="submit" value="submit">
   </form>
+
+</div>
 
 <%end%>
 
