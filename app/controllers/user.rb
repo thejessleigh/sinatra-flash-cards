@@ -38,7 +38,12 @@ end
 
 get '/user/decks' do
   @decks = Deck.where(user_id: session[:user_id])
-  @my_decks = true
+  if @decks.empty?
+    @decks = Deck.all
+    @message = "You don't have any decks!!!<br><br>Here are some other people's decks."
+  else
+    @my_decks = true
+  end
   erb :decks
 end
 
