@@ -179,6 +179,10 @@ p {
   color: #DD0022;
 }
 
+#add_card:hover{
+  color: #009922;
+}
+
 .inline {
   display:inline;
 }
