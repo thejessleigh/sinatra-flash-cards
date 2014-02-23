@@ -1,6 +1,6 @@
 <div class ="left_container">
   <%unless @user %>
-    <h1  class="title">Learn fast. Learn fresh. Learn funky.</h1>
+    <h1  class="slide">Learn fast. Learn fresh. Learn funky.</h1>
     <% if  session[:status] == "logged in" %>
       <p> Welcome, user # <%= session[:user_id] %> </p>
     <% end %>
@@ -18,17 +18,10 @@
     </div>
   <%else%>
     <div class="bottom">
-      <h1 class="title"><%=@user.user_name%>, are you ready for some funky fun?!</h1>
+      <h1 class="slide"><%=@user.user_name%>, are you ready for some funky fun?!</h1>
       <a href ="/decks">Available decks</a>
       <a href ="/user/profile">Profile</a>
       <a href="/decks/create">Create Deck</a>
     </div>
   <%end%>
 </div>
-
-<script type="text/javascript">
-  // $('.title').show('slow');
-</script>
-
-
-

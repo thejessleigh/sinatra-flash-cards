@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-  $('.title').hide().show('slow');
+  $('.slide').hide().show('slow');
 
   $('a.edit').on('click', function(e){
     e.preventDefault();
