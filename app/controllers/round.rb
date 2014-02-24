@@ -13,7 +13,6 @@ post '/card/answer/:card_id' do
   else
     @guess = Guess.create(round_id: session[:round_id], card_id: params[:card_id], correct?: params[:answer] == params[:correct])
     session[:previous_answer] = @guess.correct?
-    # binding.pry
     if session[:cards].empty?
       redirect '/round/stats'
       erb :run_card
@@ -41,9 +40,7 @@ get '/round/:deck_id' do
     @round = Round.create(deck_id: params[:deck_id], user_id: session[:user_id])
     session[:round_id] = @round.id
     session[:cards] = @deck.card_ids.sample(10)
-    # binding.pry
     session[:deck_title] =@deck.title
-    # binding.pry
     erb :start_round
   end
 end
