@@ -20,9 +20,11 @@
   <p class="center"><%= @card.question%></p>
   <form id ="question" action = '/card/answer/<%=@card.id%>' method="post">
     <label for="answer">Answer:</label><br>
-    <input type="text" name="answer" id="answer">
+    <input type="text" name="answer" id="answer" autofocus>
     <input type="text" name="correct" value="<%=@card.answer%>" class="invisible">
-    <input type="submit" value="submit">
+    <p class="submit">
+      <input type="submit" value="submit">
+    </p>
   </form>
 
 </div>

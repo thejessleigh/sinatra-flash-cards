@@ -10,7 +10,6 @@ end
 get '/decks/add_card/:deck_id' do
   @deck_id=params[:deck_id]
   erb :add_card
-  #add additional field in form to store deck_id
 end
 
 post '/decks/add_card' do
@@ -20,8 +19,6 @@ post '/decks/add_card' do
   @deck_id = @deck.id
   @has_card = true
   erb :add_card
-  #add links on view for add another card and view user profile
-  #create a confirmation view
 end
 
 get '/decks/create' do
@@ -51,7 +48,6 @@ end
 
 post '/decks/create' do
   @deck = Deck.create(params[:deck])
-   # binding.pry
   if @deck.id
     redirect "decks/add_card/#{@deck.id}"
   else

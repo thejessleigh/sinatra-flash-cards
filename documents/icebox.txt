@@ -6,3 +6,11 @@ Most frequently missed questions.
 -AJAX functionality
 
 -Try again when you get a wrong answer on Wireframe5
+
+-Replay cards that were answered incorrectly from a  particuar game.
+
+-User can edit existing cards in the deck, not just add new ones or delete.
+
+-Responsive design
+
+-Immediately display correct or incorrect on submit during a game using
