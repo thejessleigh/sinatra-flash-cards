@@ -20,7 +20,7 @@
   <p class="center"><%= @card.question%></p>
   <form id ="question" action = '/card/answer/<%=@card.id%>' method="post">
     <label for="answer">Answer:</label><br>
-    <input type="text" name="answer" id="answer">
+    <input type="text" class="required" name="answer" id="answer">
     <input type="text" name="correct" value="<%=@card.answer%>" class="invisible">
     <p class="submit">
       <input type="submit" value="submit">

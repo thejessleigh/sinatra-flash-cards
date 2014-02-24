@@ -4,11 +4,19 @@ $(document).ready(function() {
   
 
   $('input[type="submit"]').attr('disabled','disabled');
-  $('input[type="text"]').keyup(function() {
-    if($(this).val() != '') {
-       $('input[type="submit"]').removeAttr('disabled');
-    }
+
+  $('.required').keyup(function() {
+    var values = [];
+    $('.required').each(function(){ values.push($(this).val()) })
+    if( $.inArray("", values) == -1) {
+      $('input[type="submit"]').removeAttr('disabled');
+    };
   });
+ 
+
+
+  
+
   
 
   $('.edit_links').hide();
