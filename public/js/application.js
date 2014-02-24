@@ -1,6 +1,15 @@
 $(document).ready(function() {
 
   $('.slide').hide().show('slow');
+  
+
+  $('input[type="submit"]').attr('disabled','disabled');
+  $('input[type="text"]').keyup(function() {
+    if($(this).val() != '') {
+       $('input[type="submit"]').removeAttr('disabled');
+    }
+  });
+  
 
   $('.edit_links').hide();
   $('.edit').on('click', function(e){
