@@ -60,3 +60,18 @@ post '/decks/create' do
     erb :create_deck
   end
 end
+
+get '/decks/:deck_id/cards/edit' do
+  @deck = Deck.find(params[:deck_id])
+  erb :edit_card
+end
+
+post '/decks/:deck_id/cards/edit' do
+  if params[:card][:status] == "update"
+    Card.find(params[:card][:id]).update(question: params[:card][:question], answer: params[:card][:answer])
+    #redirect "/decks/#{params[:deck_id]}/cards/edit"
+    #
+  elsif params[:card][:status] == "delete"
+  end
+  params.inspect
+end
