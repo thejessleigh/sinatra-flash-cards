@@ -63,15 +63,23 @@ end
 
 get '/decks/:deck_id/cards/edit' do
   @deck = Deck.find(params[:deck_id])
-  erb :edit_card
+  if @deck.user_id == session[:user_id]
+    erb :edit_card
+  else 
+    redirect '/decks/edit'
+  end
 end
 
 post '/decks/:deck_id/cards/edit' do
   if params[:card][:status] == "update"
-    Card.find(params[:card][:id]).update(question: params[:card][:question], answer: params[:card][:answer])
-    #redirect "/decks/#{params[:deck_id]}/cards/edit"
-    #
+    card = Card.find(params[:card][:id])
+    card.question = params[:card][:question]
+    card.answer = params[:card][:answer]
+    card.save
+    redirect "/decks/#{params[:deck][:id]}/cards/edit"
+  
   elsif params[:card][:status] == "delete"
+     Card.find(params[:card][:id]).delete
+     redirect "/decks/#{params[:deck][:id]}/cards/edit"
   end
-  params.inspect
 end

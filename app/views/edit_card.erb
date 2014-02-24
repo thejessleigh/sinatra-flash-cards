@@ -1,0 +1,19 @@
+
+
+<ul>
+
+  <% @deck.cards.order("id").each do |card| %>
+    <li> 
+      <form action="/decks/:deck_id/cards/edit" method="POST"> 
+        <input type=hidden name="deck[id]" value=<%=@deck.id %>>
+        <input type=hidden name="card[id]" value=<%=card.id%>>
+        <input type="text" name="card[question]" value="<%= card.question %>"> 
+        <input type = "text" name="card[answer]" value="<%= card.answer %>" > 
+        <input type=submit name="card[status]" value="update"> 
+        <input name="card[status]" type=submit value="delete"><br>
+        <a href="/decks/edit"> return to decks </a>
+        
+      </form> 
+    </li>
+  <% end %> 
+</ul>
