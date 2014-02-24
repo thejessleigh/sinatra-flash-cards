@@ -1,10 +1,17 @@
-<h1>Choose a deck to edit:</h1>
+<h1 class="slide">Choose a deck to edit:</h1>
 
 <% @decks.each do |deck| %>
-<a class="edit" href="/decks/edit/<%=deck.id%>"><div class="deck"><%= deck.title %></div></a><div class="edit_links"></div>
+<div>
+  <a class="edit" href="/decks/edit/<%=deck.id%>"><div class="deck"><%= deck.title %></div></a>
+  <div class="edit_links">
+    <a id="delete_deck" href="/decks/delete/<%= deck.id%>"><i class="fa fa-trash-o"></i></a>
+    <a id="add_card" href="/decks/add_card/<%= deck.id%>"><i class="fa fa-plus-square"></i></a>
+  </div>
+<div>
 <% end %>
 
 
-<div class="bottom">
-  <a href="/">Home</a><br>
-</div>
+<script type="text/javascript">
+  
+
+</script>

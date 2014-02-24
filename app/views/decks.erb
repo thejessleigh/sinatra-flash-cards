@@ -1,7 +1,7 @@
-<h1>Get funky with flashcards</h1>
+<h1 class="slide">Get funky with flashcards</h1>
 <h2><%=@message%><h2>
   <%@decks.each do |deck|%>
-        <a href='/round/<%=deck.id%>'><div class="deck"><%=deck.title%></div></a>
+        <a href='/round/<%=deck.id%>' class="deck_link"><div class="deck"><%=deck.title%></div></a>
   <%end%>
 
 <div class="bottom">
@@ -16,5 +16,11 @@
   <a href="/decks/create">Create Deck</a>
 </div>
 
+<script type="text/javascript">
+  $('.deck_link').on('click', function(){
+    console.log("clicked");
+    $(this).siblings().hide('slow');   
+  });
 
 
+</script>
