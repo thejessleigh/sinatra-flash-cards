@@ -1,9 +1,10 @@
 $(document).ready(function() {
 
   $('.slide').hide().show('slow');
-  
+
 
   $('input[type="submit"]').attr('disabled','disabled');
+  $('.tara-submit').removeAttr('disabled');
 
   $('.required').keyup(function() {
     var values = [];
@@ -12,12 +13,7 @@ $(document).ready(function() {
       $('input[type="submit"]').removeAttr('disabled');
     };
   });
- 
 
-
-  
-
-  
 
   $('.edit_links').hide();
   $('.edit').on('click', function(e){
@@ -35,7 +31,7 @@ $(document).ready(function() {
     })
   });
 
-  
+
   // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
 });
 
